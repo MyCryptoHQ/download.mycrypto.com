@@ -1,0 +1,21 @@
+{
+    "environments": {
+        "develop": {
+            "gitUrl": "git@github.com:MyCryptoHQ/download.mycrypto.com.git",
+            "distFolder": "dist",
+            "buildCommand": "npm install && npm run build"
+        },
+        "staging": {
+            "gitUrl": "",
+            "distFolder": ""            
+        },
+        "prod": {
+            "gitUrl": "",
+            "distFolder": ""
+        },
+        "beta": {
+            "gitUrl": "git@github.com:MyCryptoHQ/download.mycrypto.com.git",
+            "distFolder": ""
+        }
+    }
+}
