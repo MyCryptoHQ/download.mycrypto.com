@@ -1,0 +1,329 @@
+/**
+ * css-reset
+ * Copyright (c) 2012 Enrico Marino (http://onirame.no.de)
+ * MIT License
+ */
+html, body, div,
+article, aside, details, footer, header, section,
+applet, iframe, embed, object,
+h1, h2, h3, h4, h5, h6, hgroup
+blockquote, p, pre, span,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, ins, kbd, q, ruby, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+label, legend, fieldset, form,
+table, caption, tbody, tfoot, thead, tr, th, td,
+img, figure, figcaption,
+menu, nav, output, summary,
+time, mark, canvas, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  background: #fff;
+  font-family: "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size: 14px;
+  line-height: 1em;
+  color: #555;
+  position: relative;
+  -webkit-font-smoothing: antialiased; }
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+ol, ul {
+  list-style: none; }
+
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+  font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+  @media screen and (max-width: 680px) {
+    html {
+      font-size: 85%; } }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
+
+body {
+  background: #fbfbfb;
+  color: #333333;
+  line-height: 1.4; }
+
+.Layout {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between; }
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2; }
+
+a {
+  color: #007896;
+  text-decoration: none;
+  transition: color 100ms ease;
+  cursor: pointer; }
+  a:hover {
+    color: #0099bf; }
+
+@font-face {
+  font-family: 'Lato';
+  src: url("./assets/fonts/Lato-Light.woff2") format("woff2"), url("./assets/fonts/Lato-Light.woff") format("woff");
+  font-style: normal;
+  font-weight: 300; }
+
+@font-face {
+  font-family: 'Lato';
+  src: url("./assets/fonts/Lato-Regular.woff2") format("woff2"), url("./assets/fonts/Lato-Regular.woff") format("woff");
+  font-style: normal;
+  font-weight: 400; }
+
+.Footer {
+  background-color: #163151;
+  padding: 1rem;
+  margin-top: 6rem;
+  border-top: 3px solid #007896;
+  color: #FFF;
+  text-align: center; }
+  .Footer-about-logo {
+    display: block;
+    width: 100%;
+    max-width: 245px;
+    margin: 0 auto .75rem;
+    text-align: center; }
+    .Footer-about-logo-img {
+      width: 100%; }
+  .Footer-about-links {
+    margin-bottom: .75rem; }
+    .Footer-about-links > a {
+      margin: 0 .5rem;
+      color: #FFF;
+      font-size: 1.1rem; }
+      .Footer-about-links > a:hover {
+        text-decoration: underline; }
+  .Footer-about-text {
+    font-size: 0.75rem;
+    opacity: 0.8;
+    margin: 0 auto 1rem;
+    max-width: 580px; }
+  .Footer-about-copyright {
+    font-size: .95rem; }
+
+@keyframes background-gradient {
+  0%, 100% {
+    background-position: 0% 50%; }
+  50% {
+    background-position: 100% 50%; } }
+
+@keyframes screenshot-slide {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.97); }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1); } }
+
+.Download {
+  position: relative;
+  text-align: center; }
+  .Download-top {
+    padding: 4rem 1rem 200px;
+    color: #FFF;
+    background: linear-gradient(-120deg, #163151, #007896, #163151);
+    background-size: 400% 400%;
+    animation: background-gradient 40s ease infinite; }
+  .Download-title {
+    font-size: 2.6rem;
+    margin-bottom: 1.5rem; }
+  .Download-description {
+    font-size: 1.2rem;
+    max-width: 660px;
+    margin: 0 auto 2rem;
+    opacity: 0.92; }
+  .Download-download {
+    margin-bottom: 5rem; }
+    .Download-download-button {
+      display: block;
+      max-width: 320px;
+      margin: 0 auto 1rem;
+      padding: 1rem 0;
+      font-size: 1.2rem;
+      border-radius: 4px;
+      transition: color 100ms ease, transform 100ms ease;
+      background: #FFF;
+      color: #333333; }
+      .Download-download-button:hover {
+        transform: translateY(-1px);
+        opacity: 1; }
+      .Download-download-button:hover {
+        color: #007896; }
+      .Download-download-button-icon {
+        display: inline-block;
+        width: 18px;
+        height: 16px;
+        background-size: cover;
+        background-image: url("./assets/images/icon-external.svg");
+        margin-left: 0.2rem; }
+    .Download-download-link {
+      margin: 0 0.5rem;
+      color: #FFF;
+      opacity: 0.6; }
+      .Download-download-link:hover, .Download-download-link:active {
+        color: #FFF;
+        opacity: 0.8; }
+  .Download-screenshot {
+    position: relative;
+    display: block;
+    max-width: 1020px;
+    width: 95%;
+    margin: -200px auto 8rem;
+    animation: screenshot-slide 800ms ease 1;
+    animation-delay: 1200ms;
+    animation-fill-mode: both;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12), 0 3px 4px rgba(0, 0, 0, 0.12); }
+    .Download-screenshot.is-osx {
+      border-radius: 6px; }
+    .Download-screenshot-img {
+      width: 100%; }
+      .is-osx .Download-screenshot-img {
+        border: 1px solid rgba(102, 102, 102, 0.3);
+        border-top: none;
+        border-bottom-left-radius: 6px;
+        border-bottom-right-radius: 6px; }
+      .is-windows .Download-screenshot-img {
+        border: 1px solid #fff;
+        border-top: none; }
+    .Download-screenshot-ui {
+      display: flex;
+      align-items: center; }
+      .Download-screenshot-ui-btn {
+        position: relative; }
+        .Download-screenshot-ui-btn:hover {
+          opacity: 0.7; }
+      .is-osx .Download-screenshot-ui {
+        height: 22px;
+        background-image: linear-gradient(180deg, #e8e6e8, #d2d0d2);
+        border-bottom: 1px solid #d2d0d2;
+        border-top: 1px solid #f5f4f5;
+        border-top-left-radius: 6px;
+        border-top-right-radius: 6px; }
+        .is-osx .Download-screenshot-ui-btn {
+          width: 12px;
+          height: 12px;
+          margin-left: 8px;
+          box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1) inset;
+          border-radius: 100%; }
+          .is-osx .Download-screenshot-ui-btn.is-close {
+            background: #ff5e52; }
+          .is-osx .Download-screenshot-ui-btn.is-minimize {
+            background: #ffbe00; }
+          .is-osx .Download-screenshot-ui-btn.is-maximize {
+            background: #1fcc36; }
+      .is-windows .Download-screenshot-ui {
+        height: 28px;
+        background: #fff;
+        justify-content: flex-end;
+        padding-right: 20px; }
+        .is-windows .Download-screenshot-ui-btn {
+          width: 10px;
+          height: 10px;
+          margin-left: 34px;
+          background-position: center;
+          background-repeat: no-repeat; }
+          .is-windows .Download-screenshot-ui-btn.is-close {
+            order: 3;
+            background-image: url("./assets/images/icon-windows-close.svg"); }
+          .is-windows .Download-screenshot-ui-btn.is-minimize {
+            order: 1;
+            background-image: url("./assets/images/icon-windows-minimize.svg"); }
+          .is-windows .Download-screenshot-ui-btn.is-maximize {
+            order: 2;
+            background-image: url("./assets/images/icon-windows-maximize.svg"); }
+      .is-linux .Download-screenshot-ui {
+        height: 28px;
+        padding-left: 4px;
+        background-image: linear-gradient(180deg, #595451, #41403c);
+        border-top-left-radius: 6px;
+        border-top-right-radius: 6px;
+        box-shadow: 0 1px #615f51 inset; }
+        .is-linux .Download-screenshot-ui-btn {
+          width: 16px;
+          height: 16px;
+          margin-left: 3px;
+          border-radius: 100%;
+          border: 1px solid #3c3932;
+          background: linear-gradient(180deg, #94938f, #5d5c58); }
+          .is-linux .Download-screenshot-ui-btn.is-close {
+            background: linear-gradient(180deg, #f3875a, #e1490b); }
+  .Download-features {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom: 4rem;
+    max-width: 860px;
+    margin: 0 auto; }
+    .Download-features-feature {
+      display: flex;
+      flex-direction: row;
+      max-width: 360px;
+      margin: 0 1rem 3rem;
+      text-align: left; }
+      .Download-features-feature-left {
+        padding-right: 1rem; }
+      .Download-features-feature-icon {
+        width: 52px;
+        height: 52px;
+        line-height: 52px;
+        margin: 0 auto 0.5rem;
+        color: #FFF;
+        border-radius: 8px;
+        background-size: 30px 30px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-color: rgba(22, 49, 81, 0.15) !important; }
+      .Download-features-feature-title {
+        font-size: 1.6rem;
+        margin-bottom: 0.5rem; }
+      .Download-features-feature-text {
+        font-size: 1rem; }
+  .Download-final {
+    margin: 6rem 0 1rem; }
+    .Download-final-button {
+      display: block;
+      max-width: 320px;
+      margin: 0 auto 1rem;
+      padding: 1rem 0;
+      font-size: 1.2rem;
+      border-radius: 4px;
+      transition: color 100ms ease, transform 100ms ease;
+      background: #007896;
+      color: #FFF; }
+      .Download-final-button:hover {
+        transform: translateY(-1px);
+        opacity: 1; }
+      .Download-final-button:hover {
+        color: #FFF;
+        opacity: 0.9; }

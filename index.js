@@ -1,7 +1,9 @@
-document.addEventListener('DOMContentLoaded', () => {
+'use strict';
+
+document.addEventListener('DOMContentLoaded', function () {
   // Configure OS specifics
-  let osName = null;
-  let osClass = null;
+  var osName = null;
+  var osClass = null;
 
   if (navigator.appVersion.includes('Win')) {
     osName = 'Windows';
@@ -19,5 +21,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Add classes / text
   document.querySelector('.Download-title-os').innerHTML = osName;
-  document.querySelector('.Download-screenshot').classList.add(`is-${osClass}`);
+  document.querySelector('.Download-screenshot').classList.add('is-' + osClass);
 });
