@@ -54,7 +54,7 @@ const config = {
     new HtmlWebpackPlugin({ template: 'public/index.html' }),
     new CleanWebpackPlugin(),
     new ExtractTextPlugin({
-      filename: '[name].[contenthash].css',
+      filename: '[name].[hash].css',
       disable: process.env.NODE_ENV === 'development'
     })
   ]
