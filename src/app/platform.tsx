@@ -5,11 +5,24 @@ interface Props {
   href: string;
 }
 
+const getPlatform: any = (title: string) => {
+  switch (title) {
+    case 'MacOS':
+      return 'mac';
+    case 'Windows':
+      return 'win';
+    case 'Linux':
+      return 'linux';
+    default:
+      return 'HTML';
+  }
+};
+
 export const Platform = ({ title, href }: Props) => (
-  <a href={href} className="App-platform">
+  <div className="App-platform">
     <i
       className={`nc-icon ${
-        title === 'Mac'
+        title === 'MacOS'
           ? 'nc-apple'
           : title === 'Windows'
             ? 'nc-windows'
@@ -18,6 +31,18 @@ export const Platform = ({ title, href }: Props) => (
               : 'nc-window-dev'
       }`}
     />
-    {title}
-  </a>
+    <div className="App-platform-content">
+      {getPlatform(title) === 'HTML' ? (
+        <a href={href} className="App-platform-title">
+          {title}
+        </a>
+      ) : (
+        <>
+          <p className="App-platform-title">{title}</p>
+          <a href="">32-bit</a>
+          <a href="">64-bit</a>
+        </>
+      )}
+    </div>
+  </div>
 );

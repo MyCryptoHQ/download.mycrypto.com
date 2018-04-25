@@ -12,7 +12,7 @@ import { Block } from './block';
 import { Platform } from './platform';
 
 const builds = [
-  { name: 'Mac', link: 'https://github.com/MyCryptoHQ/MyCrypto/releases/tag/1.0.0-RC' },
+  { name: 'MacOS', link: 'https://github.com/MyCryptoHQ/MyCrypto/releases/tag/1.0.0-RC' },
   { name: 'Windows', link: 'https://github.com/MyCryptoHQ/MyCrypto/releases/tag/1.0.0-RC' },
   { name: 'Linux', link: 'https://github.com/MyCryptoHQ/MyCrypto/releases/tag/1.0.0-RC' },
   { name: 'HTML Build', link: 'https://github.com/MyCryptoHQ/MyCrypto/releases/tag/1.0.0-RC' }
@@ -22,13 +22,13 @@ let OS: string = '';
 if (navigator.appVersion.includes('Win')) {
   OS = 'Windows';
 } else if (navigator.appVersion.includes('Mac')) {
-  OS = 'Mac';
+  OS = 'MacOS';
 } else if (navigator.appVersion.includes('Linux')) {
   OS = 'Linux';
 } else if (navigator.appVersion.includes('X11')) {
   OS = 'Unix';
 }
-const img: any = OS === 'Mac' ? mac : OS === 'Windows' ? windows : linux;
+const img: any = OS === 'MacOS' ? mac : OS === 'Windows' ? windows : linux;
 
 const App = () => (
   <div className="App">
@@ -49,7 +49,7 @@ const App = () => (
         <br />
         <div className="App-other-links">
           <a
-            href="https://github.com/MyCryptoHQ/MyCrypto/releases/tag/1.0.0-RC"
+            href="https://github.com/MyCryptoHQ/MyCrypto/releases/latest"
             className="App-other-links-release-notes"
           >
             release notes
@@ -58,7 +58,7 @@ const App = () => (
             href="https://github.com/MyCryptoHQ/MyCrypto/releases/tag/1.0.0-RC"
             className="App-other-links-release-notes"
           >
-            signatures
+            validate builds
           </a>
         </div>
       </div>

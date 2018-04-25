@@ -24,7 +24,8 @@
     font-weight: 400;
     letter-spacing: 1px;
     color: white;
-    margin-bottom: 1rem;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
     text-align: left;
     @media screen and (max-width: 1216px) {
       text-align: center;
@@ -35,6 +36,8 @@
     font-weight: 400;
     font-size: 1.15rem;
     max-width: 50ch;
+    margin-top: 0;
+    margin-bottom: 2rem;
     text-align: left;
     @media screen and (max-width: 1216px) {
       text-align: center;
@@ -48,7 +51,10 @@
   &-download {
     @include button(white);
     color: $primary-color;
-    transition: box-shadow $transition;
+    transition: box-shadow 150ms ease-out;
+    padding: 0.5rem 3rem;
+    font-size: 1.25rem;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2);
     clear: both;
     float: left;
     margin-bottom: 1rem;
@@ -62,7 +68,7 @@
       margin-right: 1rem;
     }
     &:hover {
-      box-shadow: 0 0 10px 3px rgba(255, 255, 255, 0.2);
+      box-shadow: 0 0px 30px 1px rgba(255, 255, 255, 0.2);
     }
   }
   &-other-links {
@@ -133,7 +139,7 @@
     }
   }
   &-other-platforms {
-    background-color: #f7f7f7;
+    background-color: #f1f6fa;
     padding: 1rem;
     &-wrapper {
       margin: auto;
@@ -141,20 +147,57 @@
       display: flex;
       flex-direction: row;
       justify-content: space-evenly;
+      @media screen and (max-width: 1024px) {
+        justify-content: center;
+        flex-direction: column;
+        max-width: 576px;
+      }
     }
   }
   &-platform {
-    @include flat-button;
-    color: $primary-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    margin: 0.5rem 1rem;
+    border-radius: $border-radius;
+    background-color: white;
+    box-shadow: 0 0 0 1px rgba(153, 170, 181, 0.3);
+    padding: 1rem 3rem;
+    color: #51545a;
     font-size: 1.25rem;
+    transition: box-shadow 150ms ease;
+    @media screen and (max-width: 1024px) {
+      max-width: 576px;
+    }
     > .nc-icon {
+      color: #6f90b2;
+      font-size: 2rem;
       margin-left: 0;
-      margin-right: 1.5rem;
+      margin-right: 2rem;
+    }
+    &-content {
+      line-height: 1;
+      > .App-platform-title {
+        color: black;
+        font-size: 1.25rem;
+        margin: 0;
+      }
+      > a {
+        color: $primary-color;
+        margin-top: 0;
+        font-size: 0.75rem;
+        &:not(:last-child) {
+          margin-right: 1rem;
+        }
+      }
     }
     @media screen and (max-width: 650px) {
       height: 100%;
-      margin: 0;
       padding: 1rem;
+    }
+    &:hover {
+      box-shadow: 0 9px 30px 1px rgba(153, 170, 181, 0.2);
     }
   }
 }
