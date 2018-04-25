@@ -12,14 +12,16 @@ import { Block } from './block';
 import { Platform } from './platform';
 
 const builds = [
-  { name: 'MacOS', link: 'https://github.com/MyCryptoHQ/MyCrypto/releases/tag/latest' },
-  { name: 'Windows', link: 'https://github.com/MyCryptoHQ/MyCrypto/releases/tag/latest' },
-  { name: 'Linux', link: 'https://github.com/MyCryptoHQ/MyCrypto/releases/tag/latest' },
-  { name: 'HTML Build', link: 'https://github.com/MyCryptoHQ/MyCrypto/releases/tag/latest' }
+  { name: 'MacOS', link: 'https://github.com/MyCryptoHQ/MyCrypto/releases/latest' },
+  { name: 'Windows', link: 'https://github.com/MyCryptoHQ/MyCrypto/releases/latest' },
+  { name: 'Linux', link: 'https://github.com/MyCryptoHQ/MyCrypto/releases/latest' },
+  { name: 'HTML Build', link: 'https://github.com/MyCryptoHQ/MyCrypto/releases/latest' }
 ];
 
-let OS: string = '';
-if (navigator.appVersion.includes('Win')) {
+let OS: string = 'Desktop';
+if (/iPhone|iPad|iPod|Android/i.test(window.navigator.userAgent)) {
+  OS = 'Desktop';
+} else if (navigator.appVersion.includes('Win')) {
   OS = 'Windows';
 } else if (navigator.appVersion.includes('Mac')) {
   OS = 'MacOS';
@@ -28,7 +30,7 @@ if (navigator.appVersion.includes('Win')) {
 } else if (navigator.appVersion.includes('X11')) {
   OS = 'Unix';
 }
-const img: any = OS === 'MacOS' ? mac : OS === 'Windows' ? windows : linux;
+const img: any = OS === 'MacOS' || OS === 'Desktop' ? mac : OS === 'Windows' ? windows : linux;
 
 const App = () => (
   <div className="App">
@@ -39,10 +41,7 @@ const App = () => (
           Run MyCrypto securely and offline with the desktop application. Powered by Electron, it's
           the same MyCrypto app, running in a sandboxed environment.
         </p>
-        <a
-          href="https://github.com/MyCryptoHQ/MyCrypto/releases/tag/latest"
-          className="App-download"
-        >
+        <a href="https://github.com/MyCryptoHQ/MyCrypto/releases/latest" className="App-download">
           <i className="nc-icon nc-hit-down" />
           Download Alpha
         </a>
@@ -55,7 +54,7 @@ const App = () => (
             release notes
           </a>
           <a
-            href="https://github.com/MyCryptoHQ/MyCrypto/releases/tag/latest"
+            href="https://github.com/MyCryptoHQ/MyCrypto/releases/latest"
             className="App-other-links-release-notes"
           >
             validate builds

@@ -39,8 +39,8 @@ export const Platform = ({ title, href }: Props) => (
       ) : (
         <>
           <p className="App-platform-title">{title}</p>
-          <a href="https://github.com/MyCryptoHQ/MyCrypto/releases/tag/latest">32-bit</a>
-          <a href="https://github.com/MyCryptoHQ/MyCrypto/releases/tag/latest">64-bit</a>
+          <a href="https://github.com/MyCryptoHQ/MyCrypto/releases/latest">32-bit</a>
+          <a href="https://github.com/MyCryptoHQ/MyCrypto/releases/latest">64-bit</a>
         </>
       )}
     </div>
