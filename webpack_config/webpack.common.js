@@ -38,7 +38,7 @@ const config = {
       },
       {
         test: /\.(gif|png|jpe?g|svg)$/i,
-        use: ['file-loader']
+        loader: 'file-loader?name=images/[name].[ext]'
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
