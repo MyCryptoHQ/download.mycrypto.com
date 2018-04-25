@@ -12,10 +12,26 @@ import { Block } from './block';
 import { Platform } from './platform';
 
 const builds = [
-  { name: 'MacOS', link: 'https://github.com/MyCryptoHQ/MyCrypto/releases/latest' },
-  { name: 'Windows', link: 'https://github.com/MyCryptoHQ/MyCrypto/releases/latest' },
-  { name: 'Linux', link: 'https://github.com/MyCryptoHQ/MyCrypto/releases/latest' },
-  { name: 'HTML Build', link: 'https://github.com/MyCryptoHQ/MyCrypto/releases/latest' }
+  {
+    name: 'macOS',
+    link:
+      'https://s3-us-west-2.amazonaws.com/mycrypto-electron-alpha/1/MyCrypto-1-0-0-ALPHA1-mac.dmg'
+  },
+  {
+    name: 'Windows',
+    link:
+      'https://s3-us-west-2.amazonaws.com/mycrypto-electron-alpha/1/MyCrypto-1-0-0-ALPHA1-windows.exe'
+  },
+  {
+    name: 'Linux',
+    link:
+      'https://s3-us-west-2.amazonaws.com/mycrypto-electron-alpha/1/MyCrypto-1-0-0-ALPHA1-linux-x86_64.AppImage'
+  },
+  {
+    name: 'Stand Alone',
+    link:
+      'https://github.com/MyCryptoHQ/MyCrypto/releases/download/1.0.0-RC/MyCrypto-1-0-0-RC1-standalone.zip'
+  }
 ];
 
 let OS: string = 'Desktop';
@@ -24,13 +40,13 @@ if (/iPhone|iPad|iPod|Android/i.test(window.navigator.userAgent)) {
 } else if (navigator.appVersion.includes('Win')) {
   OS = 'Windows';
 } else if (navigator.appVersion.includes('Mac')) {
-  OS = 'MacOS';
+  OS = 'macOS';
 } else if (navigator.appVersion.includes('Linux')) {
   OS = 'Linux';
 } else if (navigator.appVersion.includes('X11')) {
   OS = 'Unix';
 }
-const img: any = OS === 'MacOS' || OS === 'Desktop' ? mac : OS === 'Windows' ? windows : linux;
+const img: any = OS === 'macOS' || OS === 'Desktop' ? mac : OS === 'Windows' ? windows : linux;
 
 const App = () => (
   <div className="App">
@@ -41,10 +57,29 @@ const App = () => (
           Run MyCrypto securely and offline with the desktop application. Powered by Electron, it's
           the same MyCrypto app, running in a sandboxed environment.
         </p>
-        <a href="https://github.com/MyCryptoHQ/MyCrypto/releases/latest" className="App-download">
-          <i className="nc-icon nc-hit-down" />
-          Download Alpha
-        </a>
+        {OS === 'Linux' ? (
+          <div className="App-linux-download-wrapper">
+            <a
+              href="https://github.com/MyCryptoHQ/MyCrypto/releases/latest"
+              className="App-download App-linux-download"
+            >
+              <i className="nc-icon nc-hit-down" />
+              Download 32-bit
+            </a>
+            <a
+              href="https://github.com/MyCryptoHQ/MyCrypto/releases/latest"
+              className="App-download App-linux-download"
+            >
+              <i className="nc-icon nc-hit-down" />
+              Download 64-bit
+            </a>
+          </div>
+        ) : (
+          <a href="https://github.com/MyCryptoHQ/MyCrypto/releases/latest" className="App-download">
+            <i className="nc-icon nc-hit-down" />
+            Download Alpha
+          </a>
+        )}
         <br />
         <div className="App-other-links">
           <a

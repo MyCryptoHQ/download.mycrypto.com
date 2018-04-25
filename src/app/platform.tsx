@@ -7,42 +7,45 @@ interface Props {
 
 const getPlatform: any = (title: string) => {
   switch (title) {
-    case 'MacOS':
+    case 'macOS':
       return 'mac';
     case 'Windows':
       return 'win';
     case 'Linux':
-      return 'linux';
+      return 'lin';
     default:
-      return 'HTML';
+      return 'Stand Alone';
   }
 };
 
-export const Platform = ({ title, href }: Props) => (
-  <div className="App-platform">
-    <i
-      className={`nc-icon ${
-        title === 'MacOS'
-          ? 'nc-apple'
-          : title === 'Windows'
-            ? 'nc-windows'
-            : title === 'Linux'
-              ? 'nc-linux'
-              : 'nc-window-dev'
-      }`}
-    />
-    <div className="App-platform-content">
-      {getPlatform(title) === 'HTML' ? (
-        <a href={href} className="App-platform-title">
-          {title}
+export const Platform = ({ title, href }: Props) => {
+  return getPlatform(title) === 'lin' ? (
+    <div className="App-platform">
+      <i className="nc-icon nc-linux" />
+      <div className="App-platform-content">
+        <p className="App-platform-title">{title}</p>
+        <a href="https://s3-us-west-2.amazonaws.com/mycrypto-electron-alpha/1/MyCrypto-1-0-0-ALPHA1-linux-i386.AppImage">
+          32-bit
         </a>
-      ) : (
-        <>
-          <p className="App-platform-title">{title}</p>
-          <a href="https://github.com/MyCryptoHQ/MyCrypto/releases/latest">32-bit</a>
-          <a href="https://github.com/MyCryptoHQ/MyCrypto/releases/latest">64-bit</a>
-        </>
-      )}
+        <a href="https://s3-us-west-2.amazonaws.com/mycrypto-electron-alpha/1/MyCrypto-1-0-0-ALPHA1-linux-x86_64.AppImage">
+          64-bit
+        </a>
+      </div>
     </div>
-  </div>
-);
+  ) : (
+    <a href={href} className="App-platform">
+      <i
+        className={`nc-icon ${
+          title === 'macOS'
+            ? 'nc-apple'
+            : title === 'Windows'
+              ? 'nc-windows'
+              : title === 'Linux'
+                ? 'nc-linux'
+                : 'nc-window-dev'
+        }`}
+      />
+      <p className="App-platform-title">{title}</p>
+    </a>
+  );
+};
