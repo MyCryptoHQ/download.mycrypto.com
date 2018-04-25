@@ -12,10 +12,10 @@ import { Block } from './block';
 import { Platform } from './platform';
 
 const builds = [
-  { name: 'MacOS', link: 'https://github.com/MyCryptoHQ/MyCrypto/releases/tag/1.0.0-RC' },
-  { name: 'Windows', link: 'https://github.com/MyCryptoHQ/MyCrypto/releases/tag/1.0.0-RC' },
-  { name: 'Linux', link: 'https://github.com/MyCryptoHQ/MyCrypto/releases/tag/1.0.0-RC' },
-  { name: 'HTML Build', link: 'https://github.com/MyCryptoHQ/MyCrypto/releases/tag/1.0.0-RC' }
+  { name: 'MacOS', link: 'https://github.com/MyCryptoHQ/MyCrypto/releases/tag/latest' },
+  { name: 'Windows', link: 'https://github.com/MyCryptoHQ/MyCrypto/releases/tag/latest' },
+  { name: 'Linux', link: 'https://github.com/MyCryptoHQ/MyCrypto/releases/tag/latest' },
+  { name: 'HTML Build', link: 'https://github.com/MyCryptoHQ/MyCrypto/releases/tag/latest' }
 ];
 
 let OS: string = '';
@@ -40,7 +40,7 @@ const App = () => (
           the same MyCrypto app, running in a sandboxed environment.
         </p>
         <a
-          href="https://github.com/MyCryptoHQ/MyCrypto/releases/tag/1.0.0-RC"
+          href="https://github.com/MyCryptoHQ/MyCrypto/releases/tag/latest"
           className="App-download"
         >
           <i className="nc-icon nc-hit-down" />
@@ -55,7 +55,7 @@ const App = () => (
             release notes
           </a>
           <a
-            href="https://github.com/MyCryptoHQ/MyCrypto/releases/tag/1.0.0-RC"
+            href="https://github.com/MyCryptoHQ/MyCrypto/releases/tag/latest"
             className="App-other-links-release-notes"
           >
             validate builds
