@@ -34,19 +34,18 @@ const builds = [
   }
 ];
 
-let OS: string = 'Desktop';
+let OS: string = 'macOS';
 if (/iPhone|iPad|iPod|Android/i.test(window.navigator.userAgent)) {
-  OS = 'Desktop';
+  OS = 'macOS';
 } else if (navigator.appVersion.includes('Win')) {
   OS = 'Windows';
 } else if (navigator.appVersion.includes('Mac')) {
   OS = 'macOS';
-} else if (navigator.appVersion.includes('Linux')) {
+} else {
   OS = 'Linux';
-} else if (navigator.appVersion.includes('X11')) {
-  OS = 'Unix';
 }
-const img: any = OS === 'macOS' || OS === 'Desktop' ? mac : OS === 'Windows' ? windows : linux;
+
+const img: any = OS === 'macOS' ? mac : OS === 'Windows' ? windows : linux;
 
 const App = () => (
   <div className="App">
@@ -60,14 +59,14 @@ const App = () => (
         {OS === 'Linux' ? (
           <div className="App-linux-download-wrapper">
             <a
-              href="https://github.com/MyCryptoHQ/MyCrypto/releases/latest"
+              href="https://s3-us-west-2.amazonaws.com/mycrypto-electron-alpha/1/MyCrypto-1-0-0-ALPHA1-linux-i386.AppImage"
               className="App-download App-linux-download"
             >
               <i className="nc-icon nc-hit-down" />
               Download 32-bit
             </a>
             <a
-              href="https://github.com/MyCryptoHQ/MyCrypto/releases/latest"
+              href="https://s3-us-west-2.amazonaws.com/mycrypto-electron-alpha/1/MyCrypto-1-0-0-ALPHA1-linux-x86_64.AppImage"
               className="App-download App-linux-download"
             >
               <i className="nc-icon nc-hit-down" />
@@ -75,7 +74,7 @@ const App = () => (
             </a>
           </div>
         ) : (
-          <a href="https://github.com/MyCryptoHQ/MyCrypto/releases/latest" className="App-download">
+          <a href={builds.filter(_ => _.name === OS)[0].link} className="App-download">
             <i className="nc-icon nc-hit-down" />
             Download Alpha
           </a>
@@ -89,10 +88,10 @@ const App = () => (
             release notes
           </a>
           <a
-            href="https://github.com/MyCryptoHQ/MyCrypto/releases/latest"
+            href="https://s3-us-west-2.amazonaws.com/mycrypto-electron-alpha/1/checksums.txt"
             className="App-other-links-release-notes"
           >
-            validate builds
+            signatures
           </a>
         </div>
       </div>
