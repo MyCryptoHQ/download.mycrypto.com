@@ -2,6 +2,9 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
+const WebappWebpackPlugin = require('webapp-webpack-plugin');
+const MiniCSSExtractPlugin = require('mini-css-extract-plugin');
 const webpack = require('webpack');
 
 const paths = {
@@ -56,6 +59,27 @@ const config = {
     new ExtractTextPlugin({
       filename: '[name].[hash].css',
       disable: process.env.NODE_ENV === 'development'
+    }),
+    new HardSourceWebpackPlugin({
+      environmentHash: {
+        root: process.cwd(),
+        directories: ['webpack_config'],
+        files: ['package.json']
+      }
+    }),
+    new MiniCSSExtractPlugin({
+      filename: `[name].[hash].css`
+    }),
+    new WebappWebpackPlugin({
+      logo: path.join(__dirname, '../src/assets/imgs/favicon.png'),
+      cacheDirectory: false, // Cache makes builds nondeterministic
+      inject: true,
+      prefix: 'common/assets/meta-[hash]',
+      favicons: {
+        appDescription: 'Ethereum web interface',
+        display: 'standalone',
+        theme_color: '#007896'
+      }
     })
   ]
 };
