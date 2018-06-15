@@ -88,13 +88,13 @@ const App = () => (
             release notes
           </a>
           <a
-            href="https://github.com/MyCryptoHQ/MyCrypto/releases/download/1.0.0/checksums.txt"
+            href="https://github.com/MyCryptoHQ/MyCrypto/releases/download/1.1.0/checksums.txt"
             className="App-other-links-release-notes"
           >
             checksums
           </a>
           <a
-            href="https://github.com/MyCryptoHQ/MyCrypto/releases/download/1.0.0/checksums.txt.gpg"
+            href="https://github.com/MyCryptoHQ/MyCrypto/releases/download/1.1.0/checksums.txt.gpg"
             className="App-other-links-release-notes"
           >
             signed checksums
