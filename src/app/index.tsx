@@ -25,7 +25,7 @@ const MYCRYPTO_PRIVACY_URL = 'https://about.mycrypto.com/privacy/';
 const GITHUB_RELEASES_URL = 'https://api.github.com/repos/MyCryptoHQ/MyCrypto/releases/latest';
 const GITHUB_RELEASE_NOTES_URL = 'https://github.com/MyCryptoHQ/MyCrypto/releases/latest';
 const HOW_TO_VERIFY_URL =
-  'https://support.mycrypto.com/security/verifying-authenticity-of-desktop-app.html';
+  'https://support.mycrypto.com/staying-safe/verifying-authenticity-of-desktop-app';
 
 // the link to use in case the real ones can't be loaded dynamically
 const DEFAULT_LINK = GITHUB_RELEASE_NOTES_URL;
